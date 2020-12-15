@@ -1,0 +1,30 @@
+1.提交暂存区
+$ git add "filename"
+
+2.提交版本库
+$ git commit -m "some discribtion for the action"
+
+3.创建版本库
+$ mkdir "file"
+
+$ git init
+
+4.查看提交日志
+$ git log
+
+5.回退版本
+$ git reset --hard HEAD^   (回退到最新版本)
+$ git reset --hard "版本号" (回退到某个版本)
+
+6.查看当前状态
+$ git status
+
+7.查看工作区版本和最新版本比较
+$ git diff HEAD -- "filename"
+
+8.让文件回到最近一次git commit 或 git add前的状态
+$git checkout -- "filename"
+
+	场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+
+	场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
