@@ -28,3 +28,11 @@ $git checkout -- "filename"
 	场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
 
 	场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
+	
+9.将本地仓库关联到远程仓库
+$git remote add origin git@github.com:gengrenchen/learngit.git
+	远程库的名字就是origin
+	
+10.将本地仓库内容推送到远程仓库
+$git push -u origin master
+	-u是第一次推送时加的参数，将本地的master分支内容推送的远程新的master分支，并且把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
