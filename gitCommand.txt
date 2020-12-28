@@ -1,0 +1,49 @@
+1.提交暂存区
+$ git add "filename"
+
+2.提交版本库
+$ git commit -m "some discribtion for the action"
+
+3.创建版本库
+$ mkdir "file"
+
+$ git init
+
+4.查看提交日志
+$ git log
+
+5.回退版本
+$ git reset --hard HEAD^   (回退到最新版本)
+$ git reset --hard "版本号" (回退到某个版本)
+
+6.查看当前状态
+$ git status
+
+7.查看工作区版本和最新版本比较
+$ git diff HEAD -- "filename"
+
+8.让文件回到最近一次git commit 或 git add前的状态
+$git checkout -- "filename"
+
+	场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+
+	场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
+	
+9.将本地仓库关联到远程仓库
+$git remote add origin https://github.com/githbub账户名/repository.git（自建工程目录）
+	远程库的名字就是origin
+$git branch -M main
+	
+10.将本地仓库内容推送到远程仓库
+$git push -u origin main
+	-u是第一次推送时加的参数，将本地的main分支内容推送的远程新的main分支，并且把本地的v分支和远程的main分支关联起来，在以后的推送或者拉取时就可以简化命令
+	本地文件修改后，先提交到暂存区，提交到版本库，然后通过该命令推送到远程仓库
+	
+11.从远程仓库更新文件
+$git pull origin master
+	如果本地和远程仓库是不同的版本，具有不同的提交历史：
+	$git pull origin master --allow-unrelated-histories
+	
+12.从远程仓库克隆
+$git clone git@github.com:gengrenchen/gitskills.git
+	Git支持多种协议，包括https，但ssh协议速度最快。(https://github.com/githbub账户名/repository.git（自建工程目录）; git@github.com:gengrenchen/gitskills.git)
